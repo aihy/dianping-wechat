@@ -2,7 +2,6 @@
 <view class="container">
   <view class="text-box" scroll-y="true">
     <text>{{comment}}</text>
-    <br>
     <text>{{gmtCreate}}</text>
   </view>
 </view>
