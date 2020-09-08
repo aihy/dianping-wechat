@@ -1,6 +1,25 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="text-box" scroll-y="true" wx:for="{{list}}" >
-    <text>{{item.gmtCreate}}\n{{item.comment}}</text>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+    <form bindsubmit="bindFormSubmit">
+      <view class="weui-cells__title">写留言</view>
+      <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+              <view class="weui-cell__bd">
+                <textarea class="weui-textarea" name="comment" placeholder="请输入文本" style="height: 3.3em" />
+                <view class="weui-textarea-counter">0/200</view>
+              </view>
+          </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" form-type="submit">提交</button>
+      </view>
+    </form>
+    
+    <mp-cells ext-class="my-cells" title="留言板">
+      <view wx:for="{{list}}">
+        <mp-cell value="{{item.comment}}" footer="{{item.gmtCreate}}"></mp-cell>
+      </view>
+    </mp-cells>
   </view>
 </view>

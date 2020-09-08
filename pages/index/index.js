@@ -6,6 +6,9 @@ Page({
   data: {
     list: []
   },
+  formData: {
+    comment: ""
+  },
   onLoad: function () {
     var that = this;
     wx.request({
@@ -16,5 +19,22 @@ Page({
         })
       }
     })
-  }
+  },
+  bindFormSubmit(e) {
+    console.log(e.detail.value)
+    wx.request({
+      url: 'https://wzhy.ink/api/comment',
+      method: "POST",
+      data: e.detail.value,
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      success (res) {
+        console.log(res)
+        wx.redirectTo({
+          url: 'index'
+        })
+      }
+    })
+  },
 })
