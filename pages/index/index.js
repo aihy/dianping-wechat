@@ -10,7 +10,7 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-      url: 'https://wzhy.ink/comments',
+      url: 'https://wzhy.ink/api/comments',
       success (res) {
         that.setData( {
           comment: res.data[0].comment,
