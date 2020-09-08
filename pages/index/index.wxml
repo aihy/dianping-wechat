@@ -1,7 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="text-box" scroll-y="true">
-    <text>{{comment}}</text>
-    <text>{{gmtCreate}}</text>
+  <view class="text-box" scroll-y="true" wx:for="{{list}}" >
+    <text>{{item.gmtCreate}}\n{{item.comment}}</text>
   </view>
 </view>

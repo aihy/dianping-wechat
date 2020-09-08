@@ -4,8 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    comment:"",
-    gmtCreate:""
+    list: []
   },
   onLoad: function () {
     var that = this;
@@ -13,8 +12,7 @@ Page({
       url: 'https://wzhy.ink/api/comments',
       success (res) {
         that.setData( {
-          comment: res.data[0].comment,
-          gmtCreate: res.data[0].gmtCreate
+          list: res.data
         })
       }
     })
