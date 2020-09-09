@@ -9,7 +9,7 @@ Page({
   formData: {
     comment: ""
   },
-  onLoad: function () {
+  onShow: function () {
     var that = this;
     wx.request({
       url: 'https://wzhy.ink/api/comments',
